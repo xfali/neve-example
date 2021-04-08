@@ -10,6 +10,7 @@ import "sync"
 type Service interface {
 	Get(key string) string
 	Set(key, value string)
+	Delete(key string) bool
 }
 
 type impl struct {
@@ -30,4 +31,10 @@ func (impl *impl) Get(key string) string {
 
 func (impl *impl) Set(key, value string) {
 	impl.cache.Store(key, value)
+}
+
+func (impl *impl) Delete(key string) bool {
+	_, ok := impl.cache.Load(key)
+	impl.cache.Delete(key)
+	return ok
 }
