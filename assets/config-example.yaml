@@ -13,3 +13,8 @@ neve:
       ReadTimeout: 15
       WriteTimeout: 15
       IdleTimeout: 15
+
+version: "v1.0.0"
+swagger:
+  enable: true
+  path: "/swagger-ui"

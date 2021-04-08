@@ -58,7 +58,7 @@ func (h *Handler) get(ctx *gin.Context) {
 	}
 
 	h.log.Infof("Get key: %s , value: %s\n", key, v)
-	ctx.Writer.Write([]byte(v))
+	ctx.Writer.WriteString(v)
 }
 
 // @Summary Add Key and Value
