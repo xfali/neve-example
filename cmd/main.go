@@ -46,6 +46,8 @@ func main() {
 	neverror.PanicError(app.RegisterBean(swagger.NewHandler()))
 
 	neverror.PanicError(app.RegisterBean(cache.NewService()))
+	// if use mysql:
+	//neverror.PanicError(app.RegisterBean(mysql.NewService()))
 	neverror.PanicError(app.RegisterBean(cache.NewHandler()))
 
 	app.Run()

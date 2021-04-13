@@ -7,7 +7,7 @@ package cache
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/xfali/neve-web/gineve/midware"
+	"github.com/xfali/neve-web/gineve/midware/loghttp"
 	"github.com/xfali/xlog"
 	"net/http"
 )
@@ -15,7 +15,7 @@ import (
 type Handler struct {
 	log  xlog.Logger
 	Svc  Service            `inject:""`
-	HLog midware.HttpLogger `inject:""`
+	HLog loghttp.HttpLogger `inject:""`
 
 	Version string `value:"version"`
 }

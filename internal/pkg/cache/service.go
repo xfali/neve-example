@@ -18,7 +18,8 @@ type impl struct {
 }
 
 func NewService() Service {
-	return &impl{}
+	return &impl{
+	}
 }
 
 func (impl *impl) Get(key string) string {

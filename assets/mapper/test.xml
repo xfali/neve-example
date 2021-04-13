@@ -1,0 +1,61 @@
+<mapper namespace="test">
+    <sql id="columns_id">id,key,value,createtime</sql>
+
+    <select id="selectTestTable">
+        SELECT <include refid="columns_id"> </include> FROM test_table
+        <where>
+            <if test="{TestTable.id} != nil and {TestTable.id} != 0">AND id = #{TestTable.id} </if>
+            <if test="{TestTable.key} != nil">AND key = #{TestTable.key} </if>
+            <if test="{TestTable.value} != nil">AND value = #{TestTable.value} </if>
+            <if test="{TestTable.createtime} != nil">AND createtime = #{TestTable.createtime} </if>
+        </where>
+    </select>
+
+    <select id="selectTestTableCount">
+        SELECT COUNT(*) FROM test_table
+        <where>
+            <if test="{TestTable.id} != nil and {TestTable.id} != 0">AND id = #{TestTable.id} </if>
+            <if test="{TestTable.key} != nil">AND key = #{TestTable.key} </if>
+            <if test="{TestTable.value} != nil">AND value = #{TestTable.value} </if>
+            <if test="{TestTable.createtime} != nil">AND createtime = #{TestTable.createtime} </if>
+        </where>
+    </select>
+
+    <insert id="insertTestTable">
+        INSERT INTO test_table (id,key,value,createtime)
+        VALUES(
+        #{TestTable.id},
+        #{TestTable.key},
+        #{TestTable.value},
+        #{TestTable.createtime}
+        )
+    </insert>
+
+    <insert id="insertBatchTestTable">
+        INSERT INTO test_table (id,key,value,createtime)
+        VALUES
+        <foreach item="item" index="index" collection="{0}" open="" separator="," close="">
+            (#{item.TestTable.id},#{item.TestTable.key},#{item.TestTable.value},#{item.TestTable.createtime})
+        </foreach>
+    </insert>
+
+    <update id="updateTestTable">
+        UPDATE test_table
+        <set>
+            <if test="{TestTable.key} != nil"> key = #{TestTable.key} </if>
+            <if test="{TestTable.value} != nil"> value = #{TestTable.value} </if>
+            <if test="{TestTable.createtime} != nil"> createtime = #{TestTable.createtime} </if>
+        </set>
+        WHERE id = #{TestTable.id}
+    </update>
+
+    <delete id="deleteTestTable">
+        DELETE FROM test_table
+        <where>
+            <if test="{TestTable.id} != nil and {TestTable.id} != 0">AND id = #{TestTable.id} </if>
+            <if test="{TestTable.key} != nil">AND key = #{TestTable.key} </if>
+            <if test="{TestTable.value} != nil">AND value = #{TestTable.value} </if>
+            <if test="{TestTable.createtime} != nil">AND createtime = #{TestTable.createtime} </if>
+        </where>
+    </delete>
+</mapper>

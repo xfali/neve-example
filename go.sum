@@ -54,6 +54,8 @@ github.com/go-playground/validator/v10 v10.2.0 h1:KgJ0snyC2R9VXYN2rneOtQcw5aHQB1
 github.com/go-playground/validator/v10 v10.2.0/go.mod h1:uOYAAleCW8F/7oMFd6aG0GOhaH6EGOAJShg8Id5JGkI=
 github.com/go-sql-driver/mysql v1.4.1 h1:g24URVg0OFbNUTx9qqY1IRZ9D9z3iPyi5zKhQZpNwpA=
 github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
+github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
+github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/golang/protobuf v1.2.0/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/golang/protobuf v1.3.1/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
 github.com/golang/protobuf v1.3.3 h1:gyjaxf+svBWX08ZjK86iN9geUJF0H6gp2IRKX6Nf6/I=
@@ -137,6 +139,8 @@ github.com/xfali/neve-utils v0.0.1 h1:S+NfOFYeqILzCylAvd9OI00JqXW1meNPScb9JIDZBa
 github.com/xfali/neve-utils v0.0.1/go.mod h1:qwnnleG/95zSAnGPi0zWk+eeeP0bUUckkqFKa3YWvMU=
 github.com/xfali/neve-web v0.0.2 h1:T75KBLO1JcMvSoli5cb1bGrT/egB8Z2AGYl9UO8AS8M=
 github.com/xfali/neve-web v0.0.2/go.mod h1:Kds4hs20cQWKh2mNKmTPzYjGUHLaoc0hOcTHSLzxOKM=
+github.com/xfali/neve-web v0.0.3 h1:0VGQhV1WxxS5PoVfliM24UjG88SYzQeOK25iH1NvgDs=
+github.com/xfali/neve-web v0.0.3/go.mod h1:Kds4hs20cQWKh2mNKmTPzYjGUHLaoc0hOcTHSLzxOKM=
 github.com/xfali/pagehelper v0.1.3 h1:q9rIaU4y+U8FBahhxWHVTCj+n1R8V92Tr6UqNy0VOWM=
 github.com/xfali/pagehelper v0.1.3/go.mod h1:68Rwu9YvqttoFRgpWBJ8xW4Po7bBFUIPbgmyz2RfH6s=
 github.com/xfali/xlog v0.1.1 h1:iB5ESlv2/Ig8biThcbJq2ivKewdeQfPFES7LB27ceRE=
