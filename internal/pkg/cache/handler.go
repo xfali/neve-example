@@ -33,6 +33,11 @@ func (h *Handler) HttpRoutes(engine gin.IRouter) {
 	engine.DELETE("/keys/:key", h.HLog.LogHttp(), h.delete)
 }
 
+// @Summary Get version
+// @Description Get version
+// @Tags cache
+// @Success 200 {string} string
+// @Router /version [get]
 func (h *Handler) version(ctx *gin.Context) {
 	ctx.Writer.Write([]byte(h.Version))
 }
@@ -41,9 +46,9 @@ func (h *Handler) version(ctx *gin.Context) {
 // @Description Get Value
 // @Tags cache
 // @Param key path string true "key"
-// @Success 200 {array} string
-// @Failure 400 {array} string
-// @Failure 404 {array} string
+// @Success 200 {string} string
+// @Failure 400 {string} string "param error"
+// @Failure 404 {string} string "key not exists"
 // @Router /keys/{key} [get]
 func (h *Handler) get(ctx *gin.Context) {
 	key := ctx.Param("key")
@@ -64,8 +69,10 @@ func (h *Handler) get(ctx *gin.Context) {
 // @Summary Add Key and Value
 // @Description Add Key and Value
 // @Tags cache
-// @Success 200 {array} string
-// @Failure 400 {array} string
+// @Param key path string true "key"
+// @Param value body string true "value"
+// @Success 200
+// @Failure 400 {string} string "param error"
 // @Router /keys/{key} [put]
 func (h *Handler) set(ctx *gin.Context) {
 	key := ctx.Param("key")
@@ -86,9 +93,9 @@ func (h *Handler) set(ctx *gin.Context) {
 // @Description Delete Key and Value
 // @Tags cache
 // @Param key path string true "key"
-// @Success 200 {array} string
-// @Failure 400 {array} string
-// @Failure 404 {array} string
+// @Success 200
+// @Failure 400 {string} string "param error"
+// @Failure 404 {string} string "key not exists"
 // @Router /keys/{key} [delete]
 func (h *Handler) delete(ctx *gin.Context) {
 	key := ctx.Param("key")

@@ -17,23 +17,15 @@ paths:
         type: string
       responses:
         "200":
-          description: OK
-          schema:
-            items:
-              type: string
-            type: array
+          description: ""
         "400":
-          description: Bad Request
+          description: param error
           schema:
-            items:
-              type: string
-            type: array
+            type: string
         "404":
-          description: Not Found
+          description: key not exists
           schema:
-            items:
-              type: string
-            type: array
+            type: string
       summary: Delete Key and Value
       tags:
       - cache
@@ -49,40 +41,51 @@ paths:
         "200":
           description: OK
           schema:
-            items:
-              type: string
-            type: array
+            type: string
         "400":
-          description: Bad Request
+          description: param error
           schema:
-            items:
-              type: string
-            type: array
+            type: string
         "404":
-          description: Not Found
+          description: key not exists
           schema:
-            items:
-              type: string
-            type: array
+            type: string
       summary: Get Value
       tags:
       - cache
     put:
       description: Add Key and Value
+      parameters:
+      - description: key
+        in: path
+        name: key
+        required: true
+        type: string
+      - description: value
+        in: body
+        name: value
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: param error
+          schema:
+            type: string
+      summary: Add Key and Value
+      tags:
+      - cache
+  /version:
+    get:
+      description: Get version
       responses:
         "200":
           description: OK
           schema:
-            items:
-              type: string
-            type: array
-        "400":
-          description: Bad Request
-          schema:
-            items:
-              type: string
-            type: array
-      summary: Add Key and Value
+            type: string
+      summary: Get version
       tags:
       - cache
 swagger: "2.0"
