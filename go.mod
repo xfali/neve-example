@@ -13,5 +13,4 @@ require (
 	github.com/xfali/neve-utils v0.0.1
 	github.com/xfali/neve-web v0.0.5
 	github.com/xfali/xlog v0.1.1
-	google.golang.org/appengine v1.6.7 // indirect
 )

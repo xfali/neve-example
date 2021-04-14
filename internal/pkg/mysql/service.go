@@ -43,10 +43,23 @@ func (impl *impl) Set(key, value string) {
 		Key:   key,
 		Value: value,
 	}
-	_, _, err := req.Insert(impl.SessMgr.NewSession())
-	if err != nil {
-		impl.log.Errorln(err)
-	}
+
+	// Transaction
+	impl.SessMgr.NewSession().Tx(func(session *gobatis.Session) error {
+		i, err := req.Update(session)
+		if err != nil {
+			impl.log.Errorln(err)
+			return err
+		}
+		// Not update, insert it.
+		if i <= 0 {
+			_, _, err := req.Insert(impl.SessMgr.NewSession())
+			if err != nil {
+				impl.log.Errorln(err)
+			}
+		}
+		return err
+	})
 }
 
 func (impl *impl) Delete(key string) bool {

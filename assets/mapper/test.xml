@@ -22,20 +22,32 @@
     </select>
 
     <insert id="insertTestTable">
-        INSERT INTO test_table (id,key,value,createtime)
+        INSERT INTO test_table (key,value,createtime)
         VALUES(
-        #{TestTable.id},
         #{TestTable.key},
         #{TestTable.value},
         #{TestTable.createtime}
         )
     </insert>
 
+    <insert id="replaceTestTable">
+        INSERT INTO test_table (key,value,createtime)
+        VALUES(
+        #{TestTable.key},
+        #{TestTable.value},
+        #{TestTable.createtime}
+        )
+        ON DUPLICATE KEY UPDATE
+        `key` = values(key),
+        `value` = values(value),
+        `createtime` = values(createtime)
+    </insert>
+
     <insert id="insertBatchTestTable">
-        INSERT INTO test_table (id,key,value,createtime)
+        INSERT INTO test_table (key,value,createtime)
         VALUES
         <foreach item="item" index="index" collection="{0}" open="" separator="," close="">
-            (#{item.TestTable.id},#{item.TestTable.key},#{item.TestTable.value},#{item.TestTable.createtime})
+            (#{item.TestTable.key},#{item.TestTable.value},#{item.TestTable.createtime})
         </foreach>
     </insert>
 
