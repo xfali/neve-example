@@ -30,6 +30,10 @@ gobatis:
   pagehelper:
     enable: true
 
+logger:
+  path: "./neve-example.log"
+
+
 version: "v1.0.0"
 swagger:
   enable: true

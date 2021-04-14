@@ -11,6 +11,7 @@ import (
 	"github.com/xfali/neve-database/gobatiseve"
 	_ "github.com/xfali/neve-example/docs/swagdoc"
 	"github.com/xfali/neve-example/internal/pkg/cache"
+	"github.com/xfali/neve-example/pkg/logger"
 	"github.com/xfali/neve-example/pkg/swagger"
 	"github.com/xfali/neve-utils/neverror"
 	"github.com/xfali/neve-web/gineve"
@@ -40,6 +41,7 @@ func main() {
 	confFile := neve.GetResource(ConfigFile)
 	xlog.Infoln("Config file: ", confFile)
 	app := neve.NewFileConfigApplication(confFile)
+	neverror.PanicError(app.RegisterBean(logger.NewLoggerProcessor()))
 	neverror.PanicError(app.RegisterBean(processor.NewValueProcessor(processor.OptSetValueTag("", "value"))))
 	neverror.PanicError(app.RegisterBean(gineve.NewProcessor()))
 	neverror.PanicError(app.RegisterBean(gobatiseve.NewProcessor()))

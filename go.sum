@@ -143,6 +143,10 @@ github.com/xfali/pagehelper v0.1.3 h1:q9rIaU4y+U8FBahhxWHVTCj+n1R8V92Tr6UqNy0VOW
 github.com/xfali/pagehelper v0.1.3/go.mod h1:68Rwu9YvqttoFRgpWBJ8xW4Po7bBFUIPbgmyz2RfH6s=
 github.com/xfali/xlog v0.1.1 h1:iB5ESlv2/Ig8biThcbJq2ivKewdeQfPFES7LB27ceRE=
 github.com/xfali/xlog v0.1.1/go.mod h1:W9nEm+z16pEh1HAOW9m/GuVk1h9FE29jv1byivczWcw=
+github.com/xfali/xlog v0.1.2 h1:81JULwuo7nXZO8z968e9hGaZXAe5HztgiecHB6A6DXU=
+github.com/xfali/xlog v0.1.2/go.mod h1:W9nEm+z16pEh1HAOW9m/GuVk1h9FE29jv1byivczWcw=
+github.com/xfali/xlog v0.1.3 h1:na1K3h4eo6AVQZGRhnMd/ToCJxWA+vZmbeyTlp7CquI=
+github.com/xfali/xlog v0.1.3/go.mod h1:W9nEm+z16pEh1HAOW9m/GuVk1h9FE29jv1byivczWcw=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
