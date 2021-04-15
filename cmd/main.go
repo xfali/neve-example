@@ -41,15 +41,22 @@ func main() {
 	confFile := neve.GetResource(ConfigFile)
 	xlog.Infoln("Config file: ", confFile)
 	app := neve.NewFileConfigApplication(confFile)
+	// 配置日志处理器，读取配置并初始化日志系统
 	neverror.PanicError(app.RegisterBean(xlogneve.NewLoggerProcessor()))
+	// 配置值注入处理器，添加值注入功能。此处配置标识注入的tag为value
 	neverror.PanicError(app.RegisterBean(processor.NewValueProcessor(processor.OptSetValueTag("", "value"))))
+	// 配置web服务处理器，添加web服务路由注册功能
 	neverror.PanicError(app.RegisterBean(gineve.NewProcessor()))
+	// 配置数据库处理器，读取配置生成datasource
 	neverror.PanicError(app.RegisterBean(gobatiseve.NewProcessor()))
+	// 配置swagger
 	neverror.PanicError(app.RegisterBean(swagger.NewHandler()))
 
+	// 自定义的cache service
 	neverror.PanicError(app.RegisterBean(cache.NewService()))
 	// if use mysql:
 	//neverror.PanicError(app.RegisterBean(mysql.NewService()))
+	// 自定义的cache handler
 	neverror.PanicError(app.RegisterBean(cache.NewHandler()))
 
 	app.Run()
