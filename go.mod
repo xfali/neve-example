@@ -7,12 +7,11 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/swaggo/gin-swagger v1.3.0
 	github.com/swaggo/swag v1.7.0
-	github.com/xfali/fig v0.1.1
 	github.com/xfali/gobatis v0.2.6
 	github.com/xfali/neve-core v0.0.1
 	github.com/xfali/neve-database v0.0.1
+	github.com/xfali/neve-logger v0.0.0-20210415135645-d66ec8e2908f
 	github.com/xfali/neve-utils v0.0.1
 	github.com/xfali/neve-web v0.0.5
-	github.com/xfali/stream v0.0.5
 	github.com/xfali/xlog v0.1.5
 )

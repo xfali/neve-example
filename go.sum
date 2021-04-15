@@ -123,6 +123,8 @@ github.com/xfali/neve-core v0.0.1 h1:IrQbpI74vK5d4EUQq3jhUG7z/rCf8CuPUteaXvAVPXM
 github.com/xfali/neve-core v0.0.1/go.mod h1:7bE+g8Gt0Mom2978B09zy2YoslR11Ci8izSfiuJSegY=
 github.com/xfali/neve-database v0.0.1 h1:fH5hymfqZli5c71cp+FHC7nkzUa3LNxFJ4mW9SOAiUM=
 github.com/xfali/neve-database v0.0.1/go.mod h1:8oUvN/IDgHIC8oiho4wwQu1uxazNlzZ/TyGRC+qaSIg=
+github.com/xfali/neve-logger v0.0.0-20210415135645-d66ec8e2908f h1:Fk4D5GzVX48gZlGLjdZ0bgXRwevr04zwrlS42Q4ZIs8=
+github.com/xfali/neve-logger v0.0.0-20210415135645-d66ec8e2908f/go.mod h1:1FukmcEeIudimPidausXUtifjALoveL0TePU70yRjrc=
 github.com/xfali/neve-utils v0.0.1 h1:S+NfOFYeqILzCylAvd9OI00JqXW1meNPScb9JIDZBaQ=
 github.com/xfali/neve-utils v0.0.1/go.mod h1:qwnnleG/95zSAnGPi0zWk+eeeP0bUUckkqFKa3YWvMU=
 github.com/xfali/neve-web v0.0.5 h1:zqjKD/IfORA8ksC8/zpJrL9fJz2xh75awJxe9WsFAso=

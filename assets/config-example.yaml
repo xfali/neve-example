@@ -22,6 +22,12 @@ neve:
       MaxIdleConn: 500
       ConnMaxLifetime: 0
 
+  logger:
+    level: info
+    file:
+      - ./neve-example.log
+      - stdout
+
 gobatis:
   mapper:
     dir: "mapper"
@@ -29,12 +35,6 @@ gobatis:
     level: INFO
   pagehelper:
     enable: true
-
-logger:
-  file:
-    - ./neve-example.log
-    - stdout
-#    - stderr
 
 version: "v1.0.0"
 swagger:
