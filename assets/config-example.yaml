@@ -31,8 +31,10 @@ gobatis:
     enable: true
 
 logger:
-  path: "./neve-example.log"
-
+  file:
+    - ./neve-example.log
+    - stdout
+#    - stderr
 
 version: "v1.0.0"
 swagger:

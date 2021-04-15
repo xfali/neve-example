@@ -6,15 +6,19 @@
 package logger
 
 import (
+	"fmt"
 	"github.com/xfali/fig"
 	"github.com/xfali/neve-core/bean"
+	"github.com/xfali/stream"
 	"github.com/xfali/xlog"
 	"github.com/xfali/xlog/writer"
 	"io"
 	"os"
+	"strings"
 )
 
 type processor struct {
+	writers []io.WriteCloser
 }
 
 func NewLoggerProcessor() *processor {
@@ -22,12 +26,69 @@ func NewLoggerProcessor() *processor {
 }
 
 func (p *processor) Init(conf fig.Properties, container bean.Container) error {
-	path := conf.Get("logger.path", "./neve.log")
-	xlog.SetOutput(io.MultiWriter(os.Stdout, writer.NewBufferedRotateFileWriter(&writer.BufferedRotateFile{
-		Path:            path,
-		RotateFrequency: writer.RotateEveryDay,
-		RotateFunc:      writer.ZipLogsAsync,
-	})))
+	var outputs []string
+	err := conf.GetValue("logger.file", &outputs)
+	if err != nil {
+		xlog.Errorln("Get logger config failed.")
+		return nil
+	}
+
+	writers, err := p.parseWriter(outputs)
+	if err != nil {
+		// Init error, close all
+		p.closeAll()
+		xlog.Errorln(err)
+		return err
+	}
+	if len(p.writers) > 0 {
+		xlog.SetOutput(io.MultiWriter(writers...))
+	}
+	return nil
+}
+
+func (p *processor) parseWriter(outputs []string) ([]io.Writer, error) {
+	var writers []io.Writer
+	errOp := stream.Slice(outputs).Distinct(func(s1, s2 string) bool {
+		return s1 == s2
+	}).Map(func(s string) error {
+		w := matchOsOutput(s)
+		if w != nil {
+			writers = append(writers, w)
+			return nil
+		} else {
+			w := writer.NewBufferedRotateFileWriter(&writer.BufferedRotateFile{
+				Path:            s,
+				RotateFrequency: writer.RotateEveryDay,
+				RotateFunc:      writer.ZipLogsAsync,
+			})
+			if w == nil {
+				return fmt.Errorf("Init logger failed, log file: %s. ", s)
+			}
+			writers = append(writers, w)
+			// Add for close
+			p.writers = append(p.writers, w)
+			return nil
+		}
+	}).Filter(func(err error) bool {
+		return err != nil
+	}).FindFirst()
+
+	if errOp.IsPresent() {
+		return writers, errOp.Get().(error)
+	} else {
+		return writers, nil
+	}
+}
+
+func matchOsOutput(op string) io.Writer {
+	if len(op) == 0 {
+		return nil
+	}
+	if strings.ToLower(op) == "stdout" {
+		return os.Stdout
+	} else if strings.ToLower(op) == "stderr" {
+		return os.Stderr
+	}
 	return nil
 }
 
@@ -39,6 +100,20 @@ func (p *processor) Process() error {
 	return nil
 }
 
+func (p *processor) closeAll() error {
+	var ret error
+	if len(p.writers) > 0 {
+		for _, w := range p.writers {
+			err := w.Close()
+			if err != nil {
+				ret = err
+			}
+		}
+		p.writers = nil
+	}
+	return ret
+}
+
 func (p *processor) BeanDestroy() error {
-	return nil
+	return p.closeAll()
 }
