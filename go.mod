@@ -10,7 +10,7 @@ require (
 	github.com/xfali/gobatis v0.2.6
 	github.com/xfali/neve-core v0.0.1
 	github.com/xfali/neve-database v0.0.1
-	github.com/xfali/neve-logger v0.0.0-20210415135645-d66ec8e2908f
+	github.com/xfali/neve-logger v0.0.0-20210416143921-599980a3621b
 	github.com/xfali/neve-utils v0.0.1
 	github.com/xfali/neve-web v0.0.5
 	github.com/xfali/xlog v0.1.5
