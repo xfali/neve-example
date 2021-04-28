@@ -112,6 +112,8 @@ github.com/urfave/cli v1.20.0/go.mod h1:70zkFmudgCuE/ngEzBv17Jvp/497gISqfk5gWijb
 github.com/urfave/cli/v2 v2.3.0/go.mod h1:LJmUH05zAU44vOAcrfzZQKsZbVcdbOG8rtL3/XcUArI=
 github.com/xfali/fig v0.1.1 h1:X3CTxPJkVwl8Hf/GycOI2WuqhLOT2/fF2u7I+Vk+990=
 github.com/xfali/fig v0.1.1/go.mod h1:My4IYRBWjrMtfwwIDQNwQiOqhjIDB6XrQ4hvF9lzby4=
+github.com/xfali/fig v0.1.2 h1:BWgREu16b85FHCDBd585fEWkwJHHhKw2WUIL6fbvG78=
+github.com/xfali/fig v0.1.2/go.mod h1:My4IYRBWjrMtfwwIDQNwQiOqhjIDB6XrQ4hvF9lzby4=
 github.com/xfali/gobatis v0.1.1/go.mod h1:nAml9g3T+vn1qDF5nLzSQM9t4l9Fu56GYQ33bYp5Mok=
 github.com/xfali/gobatis v0.2.6 h1:+WR8utJrP027+B5Z1wtVpg98CsO3hZ1cyD3bcik4fNI=
 github.com/xfali/gobatis v0.2.6/go.mod h1:3IWS/HF+VY3++H/lHz16vPa/ZFL8CId1y/xaTb1qmWM=
@@ -121,8 +123,12 @@ github.com/xfali/loadbalance v0.0.1 h1:UVOuuDipJ740KyTaBUxTeW6UEC+fukiQCOn/5YQge
 github.com/xfali/loadbalance v0.0.1/go.mod h1:yrzHHRZMdt2wBpLnBDeU2zbjnRYeNvUWV6sq6+3KVG0=
 github.com/xfali/neve-core v0.0.1 h1:IrQbpI74vK5d4EUQq3jhUG7z/rCf8CuPUteaXvAVPXM=
 github.com/xfali/neve-core v0.0.1/go.mod h1:7bE+g8Gt0Mom2978B09zy2YoslR11Ci8izSfiuJSegY=
+github.com/xfali/neve-core v0.0.2 h1:a6DWQuS/51a2u0uwIYHaqZ/GP1svyZWstRiMlG1oJ1U=
+github.com/xfali/neve-core v0.0.2/go.mod h1:uh9eMKz+ZyK+vb77bCISjQ6PMgLgpxjMosu+IX35jcI=
 github.com/xfali/neve-database v0.0.1 h1:fH5hymfqZli5c71cp+FHC7nkzUa3LNxFJ4mW9SOAiUM=
 github.com/xfali/neve-database v0.0.1/go.mod h1:8oUvN/IDgHIC8oiho4wwQu1uxazNlzZ/TyGRC+qaSIg=
+github.com/xfali/neve-database v0.0.2 h1:TqVHDZTEBeZCxmoGVOsX1l7NFsQQvWELQZNLztdSWl0=
+github.com/xfali/neve-database v0.0.2/go.mod h1:2XDOTWaOTt+EsQ55CyAA86FerGSWRuQazxmrdB2QdPw=
 github.com/xfali/neve-logger v0.0.0-20210415135645-d66ec8e2908f h1:Fk4D5GzVX48gZlGLjdZ0bgXRwevr04zwrlS42Q4ZIs8=
 github.com/xfali/neve-logger v0.0.0-20210415135645-d66ec8e2908f/go.mod h1:1FukmcEeIudimPidausXUtifjALoveL0TePU70yRjrc=
 github.com/xfali/neve-logger v0.0.0-20210416143921-599980a3621b h1:iHQtFMjUZUWZnxCdPKWMht28yLanjn0qDhmPwyKNUt4=
@@ -131,6 +137,8 @@ github.com/xfali/neve-utils v0.0.1 h1:S+NfOFYeqILzCylAvd9OI00JqXW1meNPScb9JIDZBa
 github.com/xfali/neve-utils v0.0.1/go.mod h1:qwnnleG/95zSAnGPi0zWk+eeeP0bUUckkqFKa3YWvMU=
 github.com/xfali/neve-web v0.0.5 h1:zqjKD/IfORA8ksC8/zpJrL9fJz2xh75awJxe9WsFAso=
 github.com/xfali/neve-web v0.0.5/go.mod h1:Kds4hs20cQWKh2mNKmTPzYjGUHLaoc0hOcTHSLzxOKM=
+github.com/xfali/neve-web v0.0.6 h1:2tVcWtHxTP1vO+Q0kqYj2NeU1c95pi8zoWwqlygrB80=
+github.com/xfali/neve-web v0.0.6/go.mod h1:zG/4zWJwQy5ReBWYIJb1C/e4s52dGk8dwSIas2X/b2c=
 github.com/xfali/pagehelper v0.1.3 h1:q9rIaU4y+U8FBahhxWHVTCj+n1R8V92Tr6UqNy0VOWM=
 github.com/xfali/pagehelper v0.1.3/go.mod h1:68Rwu9YvqttoFRgpWBJ8xW4Po7bBFUIPbgmyz2RfH6s=
 github.com/xfali/stream v0.0.5 h1:hAqYM948knfO6qZVmFtxUKw6jVcCQygDgbggCoZTePw=
@@ -149,6 +157,7 @@ golang.org/x/net v0.0.0-20181220203305-927f97764cc3/go.mod h1:mL1N/T3taQHkDXs73r
 golang.org/x/net v0.0.0-20190311183353-d8887717615a/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20190404232315-eb5bcb51f2a3/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
 golang.org/x/net v0.0.0-20190503192946-f4e77d36d62c/go.mod h1:t9HGtf8HONx5eT2rtn7q6eTqICYqUVnKs3thJo3Qplg=
+golang.org/x/net v0.0.0-20190603091049-60506f45cf65/go.mod h1:HSz+uSET+XFnRR8LxR5pz3Of3rY3CfYBVs4xY44aLks=
 golang.org/x/net v0.0.0-20190611141213-3f473d35a33a/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/net v0.0.0-20190620200207-3b0461eec859/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
 golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297/go.mod h1:z5CRVTTTmAJ677TzLLGU+0bjPO0LkuOLi4/5GtJWs/s=
@@ -181,6 +190,7 @@ golang.org/x/xerrors v0.0.0-20190717185122-a985d3407aa7/go.mod h1:I/5z698sn9Ka8T
 golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
 golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 h1:go1bK/D/BFZV2I8cIQd1NKEZ+0owSTG1fDTci4IqFcE=
 golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
+google.golang.org/appengine v1.6.7/go.mod h1:8WjMMxjGQR8xUklV/ARdw2HLXBOI7O7uCIDZVag1xfc=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 h1:qIbj1fsPNlZgppZ+VLlY7N33q108Sa+fhmuc+sWQYwY=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=

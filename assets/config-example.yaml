@@ -1,26 +1,26 @@
 neve:
   web:
-    Log:
-      RequestHeader: true
-      RequestBody: true
-      ResponseHeader: true
-      ResponseBody: true
-      Level: "info"
+    log:
+      requestHeader: true
+      requestBody: true
+      responseHeader: true
+      responseBody: true
+      level: "info"
 
-    Server:
-      ContextPath: ""
-      Port: 8080
-      ReadTimeout: 15
-      WriteTimeout: 15
-      IdleTimeout: 15
+    server:
+      contextPath: ""
+      port: 8080
+      readTimeout: 15
+      writeTimeout: 15
+      idleTimeout: 15
 
-  DataSources:
+  dataSources:
     testDB:
-      DriverName: "mysql"
-      DriverInfo: "test:123@tcp(127.0.0.1:3306)/test?timeout=10s&readTimeout=15s&charset=uft8"
-      MaxCoon: 1000
-      MaxIdleConn: 500
-      ConnMaxLifetime: 0
+      driverName: "mysql"
+      driverInfo: "test:123@tcp(127.0.0.1:3306)/test?timeout=10s&readTimeout=15s&charset=uft8"
+      maxCoon: 1000
+      maxIdleConn: 500
+      connMaxLifetime: 0
 
   logger:
     level: info

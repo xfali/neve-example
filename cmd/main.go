@@ -8,7 +8,6 @@ package main
 import (
 	"github.com/xfali/neve-core"
 	"github.com/xfali/neve-core/processor"
-	"github.com/xfali/neve-database/gobatiseve"
 	_ "github.com/xfali/neve-example/docs/swagdoc"
 	"github.com/xfali/neve-example/internal/pkg/cache"
 	"github.com/xfali/neve-example/pkg/swagger"
@@ -48,7 +47,7 @@ func main() {
 	// 配置web服务处理器，添加web服务路由注册功能
 	neverror.PanicError(app.RegisterBean(gineve.NewProcessor()))
 	// 配置数据库处理器，读取配置生成datasource
-	neverror.PanicError(app.RegisterBean(gobatiseve.NewProcessor()))
+	//neverror.PanicError(app.RegisterBean(gobatiseve.NewProcessor()))
 	// 配置swagger
 	neverror.PanicError(app.RegisterBean(swagger.NewHandler()))
 
