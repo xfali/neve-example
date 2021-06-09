@@ -8,6 +8,7 @@ package mysql
 import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/xfali/gobatis"
+	"github.com/xfali/neve-core/appcontext"
 	"github.com/xfali/neve-example/internal/pkg/cache"
 	"github.com/xfali/neve-example/internal/pkg/mysql/dao"
 	"github.com/xfali/xlog"
@@ -15,7 +16,7 @@ import (
 
 type impl struct {
 	log     xlog.Logger
-	SessMgr *gobatis.SessionManager `inject:"testDB"`
+	sessMgr *gobatis.SessionManager
 }
 
 func NewService() cache.Service {
@@ -24,11 +25,17 @@ func NewService() cache.Service {
 	}
 }
 
+func (impl *impl) RegisterFunction(registry appcontext.InjectFunctionRegistry) error {
+	return registry.RegisterInjectFunction(func(sessMgr *gobatis.SessionManager) {
+		impl.sessMgr = sessMgr
+	}, "testDb")
+}
+
 func (impl *impl) Get(key string) string {
 	req := dao.TestTable{
 		Key: key,
 	}
-	ret, err := req.Select(impl.SessMgr.NewSession())
+	ret, err := req.Select(impl.sessMgr.NewSession())
 	if err != nil {
 		impl.log.Errorln(err)
 	}
@@ -45,7 +52,7 @@ func (impl *impl) Set(key, value string) {
 	}
 
 	// Transaction
-	impl.SessMgr.NewSession().Tx(func(session *gobatis.Session) error {
+	impl.sessMgr.NewSession().Tx(func(session *gobatis.Session) error {
 		i, err := req.Update(session)
 		if err != nil {
 			impl.log.Errorln(err)
@@ -53,7 +60,7 @@ func (impl *impl) Set(key, value string) {
 		}
 		// Not update, insert it.
 		if i <= 0 {
-			_, _, err := req.Insert(impl.SessMgr.NewSession())
+			_, _, err := req.Insert(session)
 			if err != nil {
 				impl.log.Errorln(err)
 			}
@@ -66,7 +73,7 @@ func (impl *impl) Delete(key string) bool {
 	req := dao.TestTable{
 		Key: key,
 	}
-	ret, err := req.Delete(impl.SessMgr.NewSession())
+	ret, err := req.Delete(impl.sessMgr.NewSession())
 	if err != nil {
 		impl.log.Errorln(err)
 	}
